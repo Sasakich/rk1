@@ -27,7 +27,6 @@ class MyAdapter : RecyclerView.Adapter<MyViewHolder>() {
         notifyDataSetChanged()
     }
 
-    // Метод для добавления одного элемента в конец списка
     fun addItem(item: Int) {
         items.add(item)
         notifyItemInserted(items.size - 1)
