@@ -32,8 +32,9 @@ class MyActivity : AppCompatActivity() {
             val newItem = itemList.size + 1
             itemList.add(newItem)
             adapter.addItem(newItem)
-            Log.d("ADD", "Item $newItem added")
+//            Log.d("ADD", "Item $newItem added")
         }
+
 
         savedInstanceState?.getIntegerArrayList("items")?.let {
             itemList.clear()

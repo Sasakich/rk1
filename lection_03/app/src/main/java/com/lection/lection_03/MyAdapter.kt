@@ -17,8 +17,13 @@ class MyAdapter : RecyclerView.Adapter<MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(items[position])
-        val colorResId = if (position % 2 == 0) R.color.red else R.color.blue
+        var colorResId = if (position % 2 == 0) R.color.red else R.color.blue
         holder.itemView.setBackgroundColor(holder.itemView.context.getColor(colorResId))
+
+        holder.itemView.setOnClickListener {
+            colorResId = if (colorResId == R.color.red) R.color.blue else R.color.red
+            holder.itemView.setBackgroundColor(holder.itemView.context.getColor(colorResId))
+        }
     }
 
     fun setItems(newItems: List<Int>) {
